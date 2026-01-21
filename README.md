@@ -36,6 +36,15 @@ Insights are visualized in Metabase.
 
 ![Dashboard Overview](assets/dashboard_overview.png)
 
+### Revenue by Month
+![Revenue by Month](assets/revenue_monthly.png)
+
+### Revenue by Country
+![Revenue by Country](assets/revenue_by_country.png)
+
+### Top Products
+![Top Products](assets/top_products.png)
+
 ### Key Insights
 - Monthly revenue trends
 - Revenue concentration by country
