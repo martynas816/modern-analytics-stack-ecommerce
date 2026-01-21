@@ -1,11 +1,7 @@
-# Metabase binaries
+# local binaries / big files
 tools/
 plugins/
-
-# dbt artifacts
+.venv/
 target/
 dbt_packages/
 logs/
-
-# venv
-.venv/
