@@ -1,0 +1,41 @@
+[0m18:45:20.583972 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002075CACFF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002075CACE910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002075CACEF10>]}
+
+
+============================== 18:45:20.593999 | d19f69d1-af41-4931-9e10-cc413c3798c9 ==============================
+[0m18:45:20.593999 [info ] [MainThread]: Running with dbt=1.11.2
+[0m18:45:20.596005 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\marty\\.dbt', 'invocation_command': 'dbt init modern_analytics_stack_ecommerce', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:45:20.631205 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\marty\.dbt
+[0m18:45:20.988973 [debug] [MainThread]: Starter project path: D:\downloads\modern-analytics-stack-ecommerce\.venv\Lib\site-packages\dbt\include\starter_project
+[0m18:45:21.116557 [info ] [MainThread]: 
+Your new dbt project "modern_analytics_stack_ecommerce" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:45:21.116557 [info ] [MainThread]: Setting up your profile.
+[0m18:46:17.975057 [info ] [MainThread]: Profile modern_analytics_stack_ecommerce written to C:\Users\marty\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:46:17.975057 [debug] [MainThread]: Command `dbt init` succeeded at 18:46:17.975057 after 57.51 seconds
+[0m18:46:17.975057 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002075CA78710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020756020350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002075CA6EC10>]}
+[0m18:46:17.980158 [debug] [MainThread]: Flushing usage events
+[0m18:46:19.212238 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:19:34.703739 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C96395EC50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C963961610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9639C23D0>]}
+
+
+============================== 19:19:34.703739 | f8c4786c-6078-43dd-9067-e0ff98cc1c95 ==============================
+[0m19:19:34.703739 [info ] [MainThread]: Running with dbt=1.11.2
+[0m19:19:34.703739 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\marty\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init modern_analytics_stack_ecommerce', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m19:19:34.741523 [info ] [MainThread]: A project called modern_analytics_stack_ecommerce already exists here.
+[0m19:19:34.747992 [debug] [MainThread]: Command `dbt init` succeeded at 19:19:34.747992 after 0.19 seconds
+[0m19:19:34.750023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C963960DD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C963968510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9636FD2D0>]}
+[0m19:19:34.752127 [debug] [MainThread]: Flushing usage events
+[0m19:19:35.975529 [debug] [MainThread]: An error was encountered while trying to flush usage events

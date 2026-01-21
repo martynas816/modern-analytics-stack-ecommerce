@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+
+  - name: dim_products
+    columns:
+      - name: product_id
+        tests: [not_null, unique]
+
+  - name: fct_order_lines
+    columns:
+      - name: invoice_id
+        tests: [not_null]
+      - name: product_id
+        tests: [not_null]
+      - name: line_revenue
+        tests: [not_null]
+
+  - name: mart_revenue_monthly
+    columns:
+      - name: month
+        tests: [not_null, unique]
+      - name: revenue
+        tests: [not_null]
+
+  - name: mart_revenue_by_country
+    columns:
+      - name: country
+        tests: [not_null, unique]
+      - name: revenue
+        tests: [not_null]
+
+  - name: mart_top_products
+    columns:
+      - name: product_id
+        tests: [not_null]
+      - name: revenue
+        tests: [not_null]
