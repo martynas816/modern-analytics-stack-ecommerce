@@ -1,0 +1,11 @@
+# Metabase binaries
+tools/
+plugins/
+
+# dbt artifacts
+target/
+dbt_packages/
+logs/
+
+# venv
+.venv/
