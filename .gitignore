@@ -1,7 +1,22 @@
-# local binaries / big files
-tools/
-plugins/
+
+# --- Python / venv ---
 .venv/
+__pycache__/
+*.pyc
+
+# --- dbt ---
 target/
 dbt_packages/
 logs/
+
+# --- Metabase local app DB ---
+metabase.db*
+metabase.db/*
+
+# --- Local binaries  ---
+tools/
+plugins/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
