@@ -1,6 +1,7 @@
 # Modern Analytics Stack — E-commerce
 
 End-to-end analytics project using a modern data stack:
+
 PostgreSQL / dbt / analytics marts / Metabase dashboards.
 
 ## Overview
