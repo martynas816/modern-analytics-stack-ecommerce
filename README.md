@@ -1,7 +1,7 @@
 # Modern Analytics Stack — E-commerce
 
 End-to-end analytics project using a modern data stack:
-PostgreSQL → dbt → analytics marts → Metabase dashboards.
+PostgreSQL / dbt / analytics marts / Metabase dashboards.
 
 ## Overview
 This project models raw e-commerce transaction data into analytics-ready tables
@@ -10,7 +10,7 @@ Insights are visualized in Metabase.
 
 ## Tech Stack
 - PostgreSQL 18
-- dbt (staging → intermediate → marts)
+- dbt
 - Metabase (dashboards)
 - Python (environment management)
 
