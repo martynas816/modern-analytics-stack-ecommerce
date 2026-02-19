@@ -1,0 +1,28 @@
+services:
+  warehouse:
+    image: postgres:16
+    container_name: mas_warehouse
+    environment:
+      POSTGRES_DB: warehouse
+      POSTGRES_USER: warehouse
+      POSTGRES_PASSWORD: warehouse
+    ports:
+      - "5432:5432"
+    volumes:
+      - warehouse_data:/var/lib/postgresql/data
+      - ./docker/warehouse-init:/docker-entrypoint-initdb.d
+      - ./data:/data:ro
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: mas_metabase
+    depends_on:
+      - warehouse
+    ports:
+      - "3000:3000"
+    volumes:
+      - metabase_data:/metabase-data
+
+volumes:
+  warehouse_data:
+  metabase_data:

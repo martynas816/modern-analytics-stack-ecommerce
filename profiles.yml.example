@@ -1,0 +1,12 @@
+modern_analytics_stack_ecommerce:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('DBT_HOST', 'localhost') }}"
+      port: "{{ env_var('DBT_PORT', '5432') | int }}"
+      user: "{{ env_var('DBT_USER', 'warehouse') }}"
+      password: "{{ env_var('DBT_PASSWORD', 'warehouse') }}"
+      dbname: "{{ env_var('DBT_DBNAME', 'warehouse') }}"
+      schema: analytics
+      threads: 4
