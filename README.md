@@ -1,7 +1,5 @@
 # Modern Analytics Stack — E-commerce (Postgres + dbt + Metabase)
 
-![dbt CI](https://github.com/martynas816/modern-analytics-stack-ecommerce/actions/workflows/dbt_ci.yml/badge.svg)
-
 A runnable analytics project: **raw CSV → Postgres → dbt models/tests → Metabase dashboards**.
 
 ## Dashboard (Metabase)
