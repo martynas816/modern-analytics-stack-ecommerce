@@ -1,4 +1,4 @@
-# Modern Analytics Stack — E-commerce (Postgres + dbt + Metabase)
+# Modern Analytics Stack - E-commerce (Postgres + dbt + Metabase)
 
 A runnable analytics project: **raw CSV → Postgres → dbt models/tests → Metabase dashboards**.
 
