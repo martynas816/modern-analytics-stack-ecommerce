@@ -1,5 +1,7 @@
 # Modern Analytics Stack — E-commerce (Postgres + dbt + Metabase)
 
+![dbt CI](https://github.com/martynas816/modern-analytics-stack-ecommerce/actions/workflows/dbt_ci.yml/badge.svg)
+
 A runnable analytics project: **raw CSV → Postgres → dbt models/tests → Metabase dashboards**.
 
 ## Dashboard (Metabase)
@@ -43,6 +45,8 @@ Notes:
 - “C…” invoices are treated as cancellations (common Online Retail convention).
 - Revenue marts exclude cancelled invoices.
 
+Metric definitions: see [`docs/metrics.md`](./docs/metrics.md).
+
 ---
 
 ## Run it (recommended)
@@ -76,6 +80,7 @@ load ./data/online_retail_raw.csv
 ```
 pip install -r requirements.txt
 ```
+
 ### 3) Set up dbt profile
 Copy profiles.yml.example → your dbt profiles folder as profiles.yml:
 

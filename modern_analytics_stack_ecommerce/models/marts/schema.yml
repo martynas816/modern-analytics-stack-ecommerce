@@ -12,6 +12,20 @@ models:
         tests: [not_null, unique]
 
   - name: fct_order_lines
+    tests:
+      # Business-rule tests (high-signal reliability checks)
+      - expression_is_true:
+          expression: "is_cancelled = (invoice_id like 'C%')"
+      - expression_is_true:
+          expression: "line_revenue = (quantity * unit_price)"
+      # Online Retail convention: cancellations may contain negative quantities/revenue.
+      # For non-cancelled invoices we enforce positive quantity and non-negative money amounts.
+      - expression_is_true:
+          expression: "(is_cancelled = true) OR (quantity > 0)"
+      - expression_is_true:
+          expression: "(is_cancelled = true) OR (unit_price >= 0)"
+      - expression_is_true:
+          expression: "(is_cancelled = true) OR (line_revenue >= 0)"
     columns:
       - name: invoice_id
         tests: [not_null]
@@ -31,6 +45,9 @@ models:
                 to: ref('dim_products')
                 field: product_id
 
+      - name: is_cancelled
+        tests: [not_null]
+
       - name: line_revenue
         tests: [not_null]
 
@@ -39,14 +56,20 @@ models:
       - name: month
         tests: [not_null, unique]
       - name: revenue
-        tests: [not_null]
+        tests:
+          - not_null
+          - expression_is_true:
+              expression: "revenue >= 0"
 
   - name: mart_revenue_by_country
     columns:
       - name: country
         tests: [not_null, unique]
       - name: revenue
-        tests: [not_null]
+        tests:
+          - not_null
+          - expression_is_true:
+              expression: "revenue >= 0"
 
   - name: mart_top_products
     columns:
