@@ -72,18 +72,18 @@ create raw.online_retail_raw
 
 load ./data/online_retail_raw.csv
 
-2) Install dbt
+### 2) Install dbt
 ```
 pip install -r requirements.txt
 ```
-4) Set up dbt profile
+### 3) Set up dbt profile
 Copy profiles.yml.example → your dbt profiles folder as profiles.yml:
 
 Windows: C:\Users\<you>\.dbt\profiles.yml
 
 Mac/Linux: ~/.dbt/profiles.yml
 
-4) Build models + run tests
+### 4) Build models + run tests
 ```
 cd modern_analytics_stack_ecommerce
 py -m dbt.cli.main debug
