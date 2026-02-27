@@ -9,7 +9,7 @@ with base as (
 agg as (
 
     select
-        date_trunc('month', ordered_at)::date as month,
+        {{ portable_date_trunc('month', 'ordered_at') }} as month,
         sum(line_revenue) as revenue,
         count(distinct invoice_id) as orders,
         count(distinct customer_id) as customers,
