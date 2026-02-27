@@ -2,6 +2,19 @@
 
 A runnable analytics project: **raw CSV → Postgres → dbt models/tests → Metabase dashboards**.
 
+## What this proves
+- **Analytics engineering:** raw → staging → marts + dbt tests
+- **Trusted KPIs:** clear metric definitions + validation mindset
+- **Dashboards:** marts powering BI views
+- **Day-to-day support:** ready-to-use investigation playbook
+
+**Evidence map:** [`docs/skills_evidence.md`](./docs/skills_evidence.md)
+
+**Commercial support playbook:** [`docs/support_playbook/`](./docs/support_playbook/)
+
+**Example incident write-up:** [`docs/ops/incident_example.md`](./docs/ops/incident_example.md)
+
+
 ## Dashboard (Metabase)
 
 **Overview**
@@ -107,8 +120,9 @@ Password: warehouse
 
 (Use warehouse as host because Metabase runs inside Docker.)
 
-```
-Project structure
+## Project structure
+
+```text
 assets/                         # screenshots used in this README
 data/                           # raw CSV
 docker/warehouse-init/          # Postgres init + CSV load scripts
@@ -121,15 +135,15 @@ modern_analytics_stack_ecommerce/
 docker-compose.yml
 profiles.yml.example
 requirements.txt
-Data model (quick)
-Grain of fct_order_lines: one invoice line (invoice_id + product_id)
 ```
 
-Dimensions: customers, products
+## Data model (quick)
 
-Revenue: summed from line_revenue where is_cancelled = false
+- Grain of `analytics.fct_order_lines`: one invoice line (`invoice_id` + `product_id`).
+- Dimensions: customers, products.
+- Revenue: `sum(line_revenue)` where `is_cancelled = false`.
 
-Common commands
+## Common commands
 Stop containers:
 ```
 docker compose down
