@@ -47,7 +47,7 @@ Metric definitions: see [`docs/metrics.md`](./docs/metrics.md).
 
 ---
 
-## Run it (recommended)
+## Run it
 
 ### Requirements
 - Docker
