@@ -1,6 +1,8 @@
 # Modern Analytics Stack - E-commerce
 
-End-to-end analytics project built on the UCI Online Retail dataset: CSV ingestion into Postgres, dbt transformations, and Metabase reporting.
+End-to-end analytics project built on the UCI Online Retail dataset. Raw transaction data is loaded into Postgres, transformed with dbt, and surfaced in Metabase for reporting.
+
+**Stack:** Postgres, dbt, Metabase, Docker
 
 ## Dashboard
 
@@ -17,6 +19,7 @@ End-to-end analytics project built on the UCI Online Retail dataset: CSV ingesti
   <img src="./assets/revenue_by_country.png" width="950" />
 
   **Top products**
+  
   <img src="./assets/top_products.png" width="450" />
 
 </details>
@@ -25,7 +28,7 @@ End-to-end analytics project built on the UCI Online Retail dataset: CSV ingesti
 
 <img src="./assets/dbt_lineage.png" width="950" />
 
-## Outputs
+## Warehouse outputs
 
 - `raw.online_retail_raw`
 - `analytics.fct_order_lines`
@@ -35,27 +38,44 @@ End-to-end analytics project built on the UCI Online Retail dataset: CSV ingesti
 - `analytics.mart_revenue_by_country`
 - `analytics.mart_top_products`
 
-Invoices beginning with `C` are treated as cancellations. Revenue marts exclude cancelled invoices.
+## Business logic
 
-Metric definitions: [`docs/metrics.md`](./docs/metrics.md)
+- Invoice IDs starting with `C` are treated as cancellations.
+- Revenue reporting excludes cancelled invoices.
+- Metric definitions are documented in [`docs/metrics.md`](./docs/metrics.md).
 
-## Run locally
+## Local setup
+
+1. Start Postgres and Metabase.
 
 ```bash
 docker compose up -d
+```
+
+This starts Postgres on `localhost:5432` and Metabase on `http://localhost:3000`. On first startup, the database init scripts create the schemas, create the raw table, and load `./data/online_retail_raw.csv`.
+
+2. Install Python dependencies.
+
+```bash
 pip install -r requirements.txt
 ```
 
-Copy `profiles.yml.example` to your local dbt profiles directory as `profiles.yml`, then run:
+3. Configure dbt by copying `profiles.yml.example` to your local dbt profiles directory as `profiles.yml`.
+
+- Windows: `C:\Users\<you>\.dbt\profiles.yml`
+- macOS/Linux: `~/.dbt/profiles.yml`
+
+4. Build the models and run tests.
 
 ```bash
 cd modern_analytics_stack_ecommerce
+dbt debug
 dbt build
 ```
 
 ## Metabase connection
 
-Use the following Postgres settings inside Metabase:
+Use the following connection details inside Metabase:
 
 - Host: `warehouse`
 - Port: `5432`
