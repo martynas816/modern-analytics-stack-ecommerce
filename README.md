@@ -1,4 +1,4 @@
-# Modern Analytics Stack - E-commerce
+# E-commerce Revenue Analytics
 
 End-to-end analytics project built on the UCI Online Retail dataset. Raw transaction data is loaded into Postgres, transformed with dbt, and surfaced in Metabase for reporting.
 
